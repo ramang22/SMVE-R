@@ -14,7 +14,7 @@ knitr::opts_chunk$set(collapse = TRUE)  # zlúčenie regiónov vstupu a výstupu
 `%>%` <- magrittr::`%>%`  # pipe operátor
 library(tictoc)
 #' 
-#' # Uhloha 1 Hod mincou
+#' # Uloha 1 Hod mincou
 #' 
 #' **Zadanie:** 1. Budeme hádzať mincou pomocou príkazu rbinom().Testujte postupne situáciu pri 10 hodoch, pri 100, 1000, 10 000, 100 000 hodoch, aká je pravdepodobnosť, že hodíte „hlavu“.
 #'Fyzické sčítanie pozitívnych výsledkov realizujte minimálne 5-timi rôznymi spôsobmi (aspoň jeden cyklus, aspoň dva spôsoby cez funkčné programovanie).  
@@ -87,10 +87,45 @@ for (len in c(100, 1000, 10000, 100000)){
 
 
 #' 
-#' # Príklad 2 (sinus)
+#' # Uloha 2.	„Priemer“ kladných hodnôt
 #' 
-#' **Zadanie:** Zobrazte sin(x) v intervale $x\in(-\pi,\pi)$
+#' **Zadanie:** 
 #' 
 #' **Riešenie:**
-seq(from = -pi, to = pi, length.out = 100) %>% 
-  plot(sin(.), type = "l", col = "red")
+
+
+
+
+#' 
+#' # Uloha 3.	
+#' 
+#' **Zadanie:** Zopakujte úlohu 2 pre vektor náhodne generovaných reálnych čísel z intervalu (0,1) .
+#'Kedy a v ktorých prípadoch budete pozorovať výraznú zmenu oproti predchádzajúcemu
+#'prípadu (spotreba pamäte, čas potrebný na výpočet...) Ako overíte, či sa sa na vypočítaný výsledok môžete spoľahnúť?
+#' 
+#' **Riešenie:**
+
+
+#' 
+#' # Uloha 4.	RMSD – root mean square deviation s podmienkou
+#' 
+#' **Zadanie:** Opäť vytvorte vektor náhodne generovaných reálnych čísel z intervalu (−1,1) s normálnym rozdelením – opäťpostupne s dĺžkou 100 – 1 000 000 čísel. Naučte sa
+#'v tomto príklade používať funkcionálnu podmienku! To znamená, že vymyslíte aspoň 5 spôsobom (jeden cyklus, aspoň dva rôzne funkcionálne prístupy) ako z vami vygenerovanej dátovej množiny vyberiete len kladné čísla (len záporné čísla, len čísla
+#'z nejakého intervalu ...) a pre tento výber vypočítate aká bude RMSD
+#'Pre každý prístup (každý naprogramovaný spôsob) a každú dĺžku vektora testujte aj #'pamätové aj časové nároky a overte hraničné limity použitia jednotlivých programátorských štýlov.
+#' 
+#' **Riešenie:**
+
+
+#' 
+#' # Uloha 5.	. Trochu genomiky - (práca s typom char)
+#' 
+#' **Zadanie:** Stiahnite si z drivu kompletnú genetickú informáciu pre covid 19 (NCBI Reference Sequence: NC_045512.2)
+#' a urobte jeho analýzu pre jednoduché základné úlohy. Pre každú úlohu (ako obvykle) aspoň 5 rôznych spôsobov ako sa to dá naprogramovať a minimálne dva (tri?) funkcionálne
+#' 
+#' **Riešenie:**
+library(seqinr)
+setwd("C:/Users/ramang/Developer/SMVE-R/OZNAL/")
+getwd()
+dat <- read.fasta(file = "sequence_covid")
+
