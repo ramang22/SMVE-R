@@ -34,7 +34,7 @@ for (len in c(100, 1000, 10000, 100000)){
   tic.clearlog()
   # 2.
   tic()
-  heads = 0
+  heads <-  0
   for (x in tosses){
     if (x == 1){
       heads = heads + 1
@@ -127,5 +127,13 @@ for (len in c(100, 1000, 10000, 100000)){
 library(seqinr)
 setwd("C:/Users/ramang/Developer/SMVE-R/OZNAL/")
 getwd()
-dat <- read.fasta(file = "sequence_covid")
+datString <- read.fasta(file = "sequence_covid.fasta", as.string = T, seqtype = "AA")[[1]]
+dat <- read.fasta(file = "sequence_covid.fasta", seqtype = "AA")[[1]]
+
+#' #1
+gcCount2 <-  function(line, st, sp, stringRegex){
+  sum(gregexpr(stringRegex, substr(line, st, sp))[[1]] > 0)
+}
+len <- length(dat)
+countA <-  gcCount2(datString, 0, len,"[A]")
 
