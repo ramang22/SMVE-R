@@ -15,6 +15,10 @@ knitr::opts_chunk$set(collapse = TRUE)  # zlúčenie regiónov vstupu a výstupu
 library("readxl")
 library(magrittr)
 
+#' 
+#' # Setup
+#' 
+
 # Nevedel som podla coho je poradove cislo v kruzku. Tak som to zobral abecedne, som 5 v abecede == 1. uloha
 # nacitanie datasetu
 df <- read_excel("C://Users//ramang//Developer//SMVE-R//Zadania//2_zadanie_assignment//data_popisna.xlsx")
@@ -103,7 +107,7 @@ boxplot(prijem1[['Prijem']],prijem2[['Prijem']],prijem3[['Prijem']],prijem4[['Pr
 #' 
 #' **Riešenie:**
 #' 
-aggregate(df$Respondent , by=list(Category=df$Miesto), FUN = length) 
+
 # tabuľku početností
 table(df$Miesto) 
 # tabuľka relatívnych početností tabulka pocetnosti - pocet vsetkych prvkov
@@ -112,3 +116,5 @@ table(df$Miesto) - c(length(df[[1]]))
 pie(table(df$Miesto))
 # stlpcovy graf
 barplot(table(df$Miesto))
+# tu som skusal vykreslit tabulku pocestnosti pomoocu aggregate
+aggregate(df$Respondent , by=list(Category=df$Miesto), FUN = length) 
